@@ -321,3 +321,18 @@ FILES         path_to_my_ssh_public_key.pub
 
 	</ul>
 </p>
+
+<p>
+	<h2 id="pip_install">pip_install</h2>
+	Install packages from the Python Package Index via pip.<br>
+	Installs <tt>build-essential</tt> and <tt>python-dev</tt> debian packages, so Python extension modules can be built.
+</p>
+<p>
+	<h3>Settings</h3>
+	<ul>
+		<li>
+			<tt>packages</tt>: Python packages to install, a list of strings. The list can contain anything that
+			<tt>pip install</tt> would accept as an argument, for example <tt>awscli==1.3.13</tt>.
+		</li>
+	</ul>
+</p>
