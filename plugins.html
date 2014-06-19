@@ -86,6 +86,15 @@ and contribute to this list!
 </p>
 
 <p>
+	<h2 id="docker">Docker</h2>
+	Install <a href="http://www.docker.io/">docker</a> daemon in the image.
+	Uses init scripts for the official repository.<br/>
+	This plugin can only be used if the distribution being bootstrapped is at least <tt>wheezy</tt>,
+	as Docker needs a kernel version <tt>3.8</tt> or higher, which is available at the <tt>wheezy-backports</tt>
+	repository. There's also an architecture requirement, as it runs only on <tt>amd64</tt>.
+</p>
+
+<p>
 	<h2 id="image_commands">Image commands</h2>
 	The image commands plugin allows you to run arbitrary commands during the bootstrap process.
 	The commands are run at an indeterminate point <i>after</i> packages have been installed, but
