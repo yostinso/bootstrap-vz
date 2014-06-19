@@ -1,5 +1,14 @@
-.bundle
-Gemfile.lock
-_site
-.jekyll-assets-cache
 *.pyc
+# Jekyll-generated files
+/Gemfile.lock
+/_site/
+# When developing for ec2 `vagrant provision' is quite handy
+/Vagrantfile
+/.vagrant/
+# Building the package
+/build/
+/dist/
+/bootstrap_vz.egg-info/
+# Testing
+/.coverage
+/.tox/
