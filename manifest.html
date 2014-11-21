@@ -152,6 +152,12 @@ heading: The manifest file
 			<span class="required label label-danger"></span>
 		</li>
 		<li>
+			<tt>userspace_architecture</tt>: Userspace architechture. Allows bootstrapping 32bit user-space with
+			a 64bit kernel. Defaults to architecture.
+			<span class="valid-enum label label-primary">i386</span>
+			<span class="optional label label-success"></span>
+		</li>
+		<li>
 			<tt>bootloader</tt>: The bootloader for the system. Depending on the bootmethod of the virtualization
 			platform, the options may be restricted.
 			<span class="valid-enum label label-primary">grub, extlinux, pv-grub</span>
