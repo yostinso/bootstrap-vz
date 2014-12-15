@@ -130,7 +130,63 @@ and contribute to this list!
 		</li>
 	</ul>
 </p>
-
+<p>
+	<h2 id="file_copy">File copy</h2>
+	This plugin allows you to copy files from the host machine to the VM image.
+	It also supports creation of new directories.
+</p>
+<p>
+	<h3>Settings</h3>
+	<ul>
+		<li>
+			<tt>mkdirs</tt>: A list of directories to create.  Any missing subdirs will be added
+                        as well.  Each entry contains the following arguments:
+			<ul>
+				<li>
+					<tt>dir</tt>: Absolute path for new dir
+					<span class="required label label-danger"></span>
+				</li>
+				<li>
+					<tt>permissions</tt>: Permissions bitmask, e.g. '755'
+					<span class="optional label label-success"></span>
+				</li>
+				<li>
+					<tt>owner</tt>: Dir owner, e.g. 'root'
+					<span class="optional label label-success"></span>
+				</li>
+				<li>
+					<tt>group</tt>: Dir group, e.g. 'root'
+					<span class="optional label label-success"></span>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<tt>files</tt>: A list of files to copy.  Each entry contains the following arguments:
+			<ul>
+				<li>
+					<tt>src</tt>: Absolute path (within host system) to file to be copied
+					<span class="required label label-danger"></span>
+				</li>
+				<li>
+					<tt>dst</tt>: Absolute path (within created image) for copy
+					<span class="required label label-danger"></span>
+				</li>
+				<li>
+					<tt>permissions</tt>: Permissions bitmask, e.g. '755'
+					<span class="optional label label-success"></span>
+				</li>
+				<li>
+					<tt>owner</tt>: File owner, e.g. 'root'
+					<span class="optional label label-success"></span>
+				</li>
+				<li>
+					<tt>group</tt>: File group, e.g. 'root'
+					<span class="optional label label-success"></span>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</p>
 <p>
 	<h2 id="minimize_size">minimize size</h2>
 	This plugin can be used to reduce the size of the resulting image.
