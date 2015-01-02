@@ -1,6 +1,7 @@
 from bootstrapvz.base import Task
 from .. import phases
 import os.path
+from . import assets
 
 
 class BlackListModules(Task):
@@ -33,6 +34,7 @@ class DisableGetTTYs(Task):
 				i = str(i)
 				sed_i(inittab_path, '^' + i + ttyx + i, '#' + i + ttyx + i)
 		else:
-			tty_path = 'etc/systemd/system/getty.target.wants/getty@tty{num}.service'
-			for i in range(2, 7):
-				os.remove(os.path.join(info.root, tty_path.format(num=i)))
+			from shutil import copy
+			logind_asset_path = os.path.join(assets, 'systemd/logind.conf')
+			logind_destination = os.path.join(info.root, 'etc/systemd/logind.conf')
+			copy(logind_asset_path, logind_destination)
