@@ -26,6 +26,8 @@ def resolve_tasks(taskset, manifest):
 		taskset.add(tasks.SetUsername)
 	if 'disable_modules' in options:
 		taskset.add(tasks.DisableModules)
+	if 'disable_root' in options:
+		taskset.add(tasks.DisableRoot)
 
 	taskset.discard(initd_ec2.AddEC2InitScripts)
 	taskset.discard(initd.AddExpandRoot)

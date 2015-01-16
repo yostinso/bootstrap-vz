@@ -37,6 +37,20 @@ class SetUsername(Task):
 		sed_i(cloud_cfg, search, replace)
 
 
+class DisableRoot(Task):
+	description = 'Setting root user en/disabled'
+	phase = phases.system_modification
+
+	@classmethod
+	def run(cls, info):
+		from bootstrapvz.common.tools import sed_i
+		cloud_cfg = os.path.join(info.root, 'etc/cloud/cloud.cfg')
+		disable_root = "true" if info.manifest.plugins['cloud_init']['disable_root'] else "false"
+		search = '^disable_root: true$'
+		replace = ('disable_root: {disable_root}').format(disable_root=disable_root)
+		sed_i(cloud_cfg, search, replace)
+
+
 class SetMetadataSource(Task):
 	description = 'Setting metadata source'
 	phase = phases.package_installation

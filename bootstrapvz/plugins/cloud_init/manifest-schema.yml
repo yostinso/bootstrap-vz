@@ -23,6 +23,7 @@ properties:
         properties:
           username: {type: string}
           metadata_sources: {type: string}
+          disable_root: {type: boolean}
           disable_modules:
             type: array
             items: {type: string}
